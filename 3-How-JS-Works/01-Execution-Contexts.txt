@@ -1,0 +1,62 @@
+Execution Context:
+------------------
+Is the box or container or wrapper which stores variables and in which a piece of our code is evaluated and executed.
+
+Default execution context is 'GLOBAL EXECUTION CONTEXT'
+
+Global Execution Context:
+-------------------------
+ > Code that is NOT INSIDE ANY FUNCTION is executed.
+ > It is for variables and functions which are not       inside the function.
+ > Associated with the GLOBAL OBJECT
+ > In the beowser, Window object is the Global           Execution Context
+   Eg: lastName === window.lastName //true
+   
+Demonstration of Execution Context:
+-----------------------------------
+Please watch the video in Section 3 of Udemy Javascript Course
+"Execution Context and the Execution Stack
+
+////////////////////////////////////////////////////// 
+Execution contexts in Detail: Creation and Execution Phases and Hoisting
+//////////////////////////////////////////////////////
+
+Execution Context Object: Has three properties
+========================
+
+Variable Object (VO) --|
+Scope Chain -----------|--> Properties of          
+"This" Variable -------|    Execution Context Object
+
+
+Variable Object (VO): Will contain Function Arguement, Inner Variable Declaration as well as Functional Declaration
+
+Scope Chain: Contains curent variable object as well as variable objects of all its parents
+
+"This" variable:
+
+Execution Context is created when a function is called it creates a new Execution Context on top of the Execution Stack. This happens in 2 phases
+1. Creation Phase
+2. Execution Phase
+
+Creation Phase:
+---------------
+In creation phase we have
+    a. Creation of the Variable Obhect (VO)
+    b. Creation of the scope chain
+    c. Determine value of the 'this' variable
+
+Execution Phase:
+----------------
+In execution phase, the code of the function that generated the current execution context is run line by line and all its variables are defined.
+
+If it's a global context, then it is a global code that is being executed.
+
+A. CREATION OF THE VARIABLE OBJECT (VO):
+    i) The arguement object is created, containing    all the arguements that were passed into the      function.
+    ii) Code is scanned for 'function declarations':  for each function, a property is created in       the Variable Object, pointing to the             function.
+    iii) Code is scanned for 'variable declarations': for each variable, a property is created in the Variable Object, and set to undefined
+    
+    Steps ii) and iii) Combined together is called as 'HOISTING'.
+    
+    HOISTING is explained better in a practice code '02-HoistingConcept.js'
