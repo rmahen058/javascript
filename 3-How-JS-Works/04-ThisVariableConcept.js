@@ -11,14 +11,18 @@ Method Call: The 'this' variable points to the obhect that is calling the method
 
 Note: The 'this' keyword is not assigned a value until a functin where it is defined is actually called.
 */
+/*
 
 console.log(this); //Points at Window Object
 calculateAge(1985);
+*/
+/*
 
 function calculateAge(yearBirth) {
     console.log(2017 - yearBirth);
     console.log(this); //Points at window object since it is regular object
 }
+*/
 
 var Emp = {
     Name: 'Rakesh',
@@ -36,3 +40,15 @@ var Emp = {
 }
 
 Emp.Retirement();
+
+///////////////////////////////
+// METHOD BORROWING
+
+var Emp1 = {
+    Name: 'Suma',
+    Age: 27
+}
+
+Emp1.Retirement = Emp.Retirement;
+
+Emp1.Retirement();
